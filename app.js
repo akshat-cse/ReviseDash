@@ -189,7 +189,7 @@ const EMBEDDED_STUDY_DATA = {
             "John M Fergusson proposed that female infanticide due to food scarcity led to polyandry, which prevented establishing paternity and led to matriliny; over time, this was replaced by capture and other systems."
           ]
         },
-        "Conclusion": {
+        "Conclusion Morgan": {
           "description": "Although Morgan’s theories had flaws and reflected biases, his work established the importance of kinship studies and scientific fieldwork in anthropology. He was among the first to attempt global, systematic research on family evolution."
         },
         "Frazer's Stages of Mental Advancement": {
@@ -240,7 +240,7 @@ const EMBEDDED_STUDY_DATA = {
             "Subsequent research led to revision of his ideas"
           ]
         },
-        "Conclusion": {
+        "Conclusion Frazer": {
           "description": "Frazer's theory had great influence during its time. He himself acknowledged the limitations of his work, stating that new evidence from direct observation of societies would eventually supersede his ideas.",
           "keyPoints": [
             "Important early contribution but with limitations",
