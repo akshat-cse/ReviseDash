@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyApp - Anthropology Topics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                <h1 class="app-title" id="appTitle">StudyApp</h1>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h2>Study Topics</h2>
+                </div>
+                
+                <!-- Class 1 -->
+                <div class="topic-group">
+                    <button class="topic-group-header" data-group="class1">
+                        <span class="expand-icon">›</span>
+                        <span>Class 1: Positivism & Classical Evolution</span>
+                    </button>
+                    <div class="subtopics" id="class1">
+                        <button class="subtopic" data-topic="class1" data-subtopic="positivism">
+                            Positivism
+                        </button>
+                        <button class="subtopic" data-topic="class1" data-subtopic="classical-evolution">
+                            Classical Evolution
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Class 2 -->
+                <div class="topic-group">
+                    <button class="topic-group-header" data-group="class2">
+                        <span class="expand-icon">›</span>
+                        <span>Class 2: Edward Burnett Tylor & Cultural Evolution</span>
+                    </button>
+                    <div class="subtopics" id="class2">
+                        <button class="subtopic" data-topic="class2" data-subtopic="edward-burnett-tylor">
+                            Edward Burnett Tylor (1832-1917)
+                        </button>
+                        <button class="subtopic" data-topic="class2" data-subtopic="definition-of-culture">
+                            Definition of Culture
+                        </button>
+                        <button class="subtopic" data-topic="class2" data-subtopic="two-key-principles">
+                            Two Key Principles
+                        </button>
+                        <button class="subtopic" data-topic="class2" data-subtopic="idea-of-cultural-evolution">
+                            Idea of Cultural Evolution
+                        </button>
+                        <button class="subtopic" data-topic="class2" data-subtopic="religious-evolution">
+                            Religious Evolution
+                        </button>
+                        <button class="subtopic" data-topic="class2" data-subtopic="language-evolution">
+                            Language Evolution
+                        </button>
+                        <button class="subtopic" data-topic="class2" data-subtopic="criticism-of-tylors-theory">
+                            Criticism of Tylor's Theory
+                        </button>
+                        <button class="subtopic" data-topic="class2" data-subtopic="conclusion">
+                            Conclusion
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Class 3 -->
+                <div class="topic-group">
+                    <button class="topic-group-header" data-group="class3">
+                        <span class="expand-icon">›</span>
+                        <span>Class 3: Lewis Henry Morgan & Kinship Systems</span>
+                    </button>
+                    <div class="subtopics" id="class3">
+                        <button class="subtopic" data-topic="class3" data-subtopic="lewis-henry-morgan">
+                            Lewis Henry Morgan
+                        </button>
+                        <button class="subtopic" data-topic="class3" data-subtopic="kinship-typology">
+                            Kinship Typology
+                        </button>
+                        <button class="subtopic" data-topic="class3" data-subtopic="global-kinship-study">
+                            Global Kinship Study
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <div class="welcome-screen" id="welcomeScreen">
+                <div class="welcome-card">
+                    <h1>Welcome to StudyApp</h1>
+                    <p>Your comprehensive anthropology study companion. Select a topic from the sidebar to begin exploring the fascinating world of anthropological theory and research.</p>
+                    <div class="welcome-features">
+                        <div class="feature">
+                            <h3>📚 Organized Content</h3>
+                            <p>Topics are structured by class with detailed subtopics for easy navigation</p>
+                        </div>
+                        <div class="feature">
+                            <h3>🔍 Detailed Explanations</h3>
+                            <p>Each topic includes comprehensive descriptions and key points</p>
+                        </div>
+                        <div class="feature">
+                            <h3>📱 Responsive Design</h3>
+                            <p>Study anywhere with our mobile-friendly interface</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="topic-content hidden" id="topicContent">
+                <div class="content-card">
+                    <h1 id="topicTitle"></h1>
+                    <div class="topic-description">
+                        <p id="topicDescription"></p>
+                    </div>
+                    <div class="key-points">
+                        <h3>Key Points:</h3>
+                        <ul id="keyPointsList"></ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar overlay for mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
