@@ -263,7 +263,7 @@
   --color-info-rgb: var(--color-gray-300-rgb);
 }
 
-[data-color-scheme="light"] {
+[data-color-scheme="dark"] {
   /* RGB versions for opacity control (light mode) */
   --color-brown-600-rgb: 94, 82, 64;
   --color-teal-500-rgb: 33, 128, 141;
@@ -513,7 +513,7 @@ select.form-control {
   background-image: var(--select-caret-dark);
 }
 
-[data-color-scheme="light"] select.form-control {
+[data-color-scheme="dark"] select.form-control {
   background-image: var(--select-caret-light);
 }
 
