@@ -1,144 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyApp - Anthropology Topics</title>
+    <title>Study App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__content">
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <h1 class="header__title">Study App</h1>
+        </div>
+    </header>
+
+    <!-- App Container -->
     <div class="app-container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
-                    <span class="hamburger"></span>
-                    <span class="hamburger"></span>
-                    <span class="hamburger"></span>
-                </button>
-                <h1 class="app-title" id="appTitle">StudyApp</h1>
-            </div>
-        </header>
-
         <!-- Sidebar -->
-        <nav class="sidebar" id="sidebar">
-            <div class="sidebar-content">
-                <div class="sidebar-header">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar__content">
+                <div class="sidebar__header">
                     <h2>Study Topics</h2>
-                </div>
-                
-                <!-- Class 1 -->
-                <div class="topic-group">
-                    <button class="topic-group-header" data-group="class1">
-                        <span class="expand-icon">›</span>
-                        <span>Class 1: Positivism & Classical Evolution</span>
-                    </button>
-                    <div class="subtopics" id="class1">
-                        <button class="subtopic" data-topic="class1" data-subtopic="positivism">
-                            Positivism
-                        </button>
-                        <button class="subtopic" data-topic="class1" data-subtopic="classical-evolution">
-                            Classical Evolution
-                        </button>
-                    </div>
+                    <button class="sidebar__close" id="sidebarClose" aria-label="Close sidebar">×</button>
                 </div>
 
-                <!-- Class 2 -->
-                <div class="topic-group">
-                    <button class="topic-group-header" data-group="class2">
-                        <span class="expand-icon">›</span>
-                        <span>Class 2: Edward Burnett Tylor & Cultural Evolution</span>
-                    </button>
-                    <div class="subtopics" id="class2">
-                        <button class="subtopic" data-topic="class2" data-subtopic="edward-burnett-tylor">
-                            Edward Burnett Tylor (1832-1917)
-                        </button>
-                        <button class="subtopic" data-topic="class2" data-subtopic="definition-of-culture">
-                            Definition of Culture
-                        </button>
-                        <button class="subtopic" data-topic="class2" data-subtopic="two-key-principles">
-                            Two Key Principles
-                        </button>
-                        <button class="subtopic" data-topic="class2" data-subtopic="idea-of-cultural-evolution">
-                            Idea of Cultural Evolution
-                        </button>
-                        <button class="subtopic" data-topic="class2" data-subtopic="religious-evolution">
-                            Religious Evolution
-                        </button>
-                        <button class="subtopic" data-topic="class2" data-subtopic="language-evolution">
-                            Language Evolution
-                        </button>
-                        <button class="subtopic" data-topic="class2" data-subtopic="criticism-of-tylors-theory">
-                            Criticism of Tylor's Theory
-                        </button>
-                        <button class="subtopic" data-topic="class2" data-subtopic="conclusion">
-                            Conclusion
-                        </button>
-                    </div>
-                </div>
+                <nav class="sidebar__nav" id="sidebarNav">
+                    <!-- Topics will be dynamically loaded here -->
+                </nav>
 
-                <!-- Class 3 -->
-                <div class="topic-group">
-                    <button class="topic-group-header" data-group="class3">
-                        <span class="expand-icon">›</span>
-                        <span>Class 3: Lewis Henry Morgan & Kinship Systems</span>
-                    </button>
-                    <div class="subtopics" id="class3">
-                        <button class="subtopic" data-topic="class3" data-subtopic="lewis-henry-morgan">
-                            Lewis Henry Morgan
-                        </button>
-                        <button class="subtopic" data-topic="class3" data-subtopic="kinship-typology">
-                            Kinship Typology
-                        </button>
-                        <button class="subtopic" data-topic="class3" data-subtopic="global-kinship-study">
-                            Global Kinship Study
-                        </button>
+                <!-- <div class="sidebar__footer">
+                    <div class="edit-instructions">
+                        <h4>📝 How to Edit Content</h4>
+                        <p>To edit the study content:</p>
+                        <ol>
+                            <li>Open the <code>app.js</code> file in a text editor</li>
+                            <li>Find the <code>EMBEDDED_STUDY_DATA</code> section</li>
+                            <li>Edit the JSON structure with your content</li>
+                            <li>Save the file and refresh the page</li>
+                        </ol>
+                        <p class="note">💡 Keep the same JSON structure when making changes</p>
                     </div>
-                </div>
+                </div> -->
             </div>
-        </nav>
+        </aside>
+
+        <!-- Sidebar Overlay for Mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
         <!-- Main Content -->
-        <main class="main-content" id="mainContent">
+        <main class="main-content">
+            <!-- Welcome Screen -->
             <div class="welcome-screen" id="welcomeScreen">
-                <div class="welcome-card">
-                    <h1>Welcome to StudyApp</h1>
-                    <p>Your comprehensive anthropology study companion. Select a topic from the sidebar to begin exploring the fascinating world of anthropological theory and research.</p>
-                    <div class="welcome-features">
-                        <div class="feature">
-                            <h3>📚 Organized Content</h3>
-                            <p>Topics are structured by class with detailed subtopics for easy navigation</p>
+                <div class="welcome-content">
+                    <h1>Welcome to the Study App</h1>
+                    <p>Select a topic from the sidebar to begin studying. All content is embedded in the app for instant
+                        loading.</p>
+
+                    <div class="feature-cards">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>⚡ Instant Loading</h3>
+                                <p>All study content is embedded for immediate access</p>
+                            </div>
                         </div>
-                        <div class="feature">
-                            <h3>🔍 Detailed Explanations</h3>
-                            <p>Each topic includes comprehensive descriptions and key points</p>
+
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>📱 Mobile Friendly</h3>
+                                <p>Responsive design works seamlessly on all devices</p>
+                            </div>
                         </div>
-                        <div class="feature">
-                            <h3>📱 Responsive Design</h3>
-                            <p>Study anywhere with our mobile-friendly interface</p>
+
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>✏️ Easy to Edit</h3>
+                                <p>Simple JSON structure in the JavaScript file</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>🎯 Focused Learning</h3>
+                                <p>Clean interface for distraction-free studying</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Topic Content -->
             <div class="topic-content hidden" id="topicContent">
-                <div class="content-card">
-                    <h1 id="topicTitle"></h1>
-                    <div class="topic-description">
-                        <p id="topicDescription"></p>
-                    </div>
-                    <div class="key-points">
-                        <h3>Key Points:</h3>
+                <div class="topic-header">
+                    <!-- <button class="back-btn" id="backBtn">← Back to Welcome</button> -->
+                </div>
+
+                <div class="content-body">
+                    <h1 class="topic-title" id="topicTitle"></h1>
+                    <div class="topic-description" id="topicDescription"></div>
+                    <div class="key-points" id="keyPoints">
+                        <h3>Key Points</h3>
                         <ul id="keyPointsList"></ul>
                     </div>
                 </div>
             </div>
         </main>
-
-        <!-- Sidebar overlay for mobile -->
-        <div class="sidebar-overlay" id="sidebarOverlay"></div>
     </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>
