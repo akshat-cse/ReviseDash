@@ -1,379 +1,522 @@
-// Study App JavaScript functionality
+// Simplified Study App JavaScript - Uses Only Embedded Data
+// App loads instantly with no external dependencies
 
-// Topic data
-const studyData = {
-  "Class 1": {
-    "title": "Positivism & Classical Evolution",
-    "subtopics": {
-      "Positivism": {
-        "description": "Theoretical approach that advocates application of methods of natural sciences such as observation, experimentation, and empirical verification to the study of social phenomena. It seeks to uncover general laws of human behaviour relying on collected data.",
-        "keyPoints": [
-          "Application of natural science methods",
-          "Observation, experimentation, and empirical verification",
-          "Study of social phenomena",
-          "General laws of human behavior"
-        ]
-      },
-      "Classical Evolution": {
-        "description": "Theory states that social development & culture experienced successive developments in sequences. Evolution occurred from simple → complex, homogeneity → heterogeneity, and indefinite → definite.",
-        "keyPoints": [
-          "Every culture passes through same stages: savagery, barbarianism, civilization",
-          "Similarities due to invention and psychic unity of mankind",
-          "Survivals are practices carried on due to force of habit without contemporary relevance"
-        ]
+/* 
+🔧 EMBEDDED_STUDY_DATA - Edit this section to modify your study content
+Keep the same JSON structure when making changes:
+
+{
+  "studyTopics": {
+    "Class Key": {
+      "title": "Class Title",
+      "subtopics": {
+        "Subtopic Name": {
+          "description": "Detailed description here...",
+          "keyPoints": [
+            "Key point 1",
+            "Key point 2",
+            "Key point 3"
+          ]
+        }
       }
     }
-  },
-  "Class 2": {
-    "title": "Edward Burnett Tylor & Cultural Evolution",
-    "subtopics": {
-      "Edward Burnett Tylor (1832-1917)": {
-        "description": "Founding father of modern anthropology. Discovered similarities between Mexican tribes and communities worldwide.",
-        "keyPoints": [
-          "Founding father of modern anthropology",
-          "Research into the Early History of Mankind and Development",
-          "Cultural similarities due to similar inventions",
-          "People think alike under similar conditions"
-        ]
-      },
-      "Definition of Culture": {
-        "description": "A complex whole consisting of knowledge, belief, arts, morals, laws, customs, and other capabilities.",
-        "keyPoints": [
-          "Knowledge, belief, arts, morals, laws, customs",
-          "Complex whole of human capabilities",
-          "Foundation for anthropological study"
-        ]
-      },
-      "Two Key Principles": {
-        "description": "Tylor reconstructed human cultural history on two main principles:",
-        "keyPoints": [
-          "Uniformitarianism — Geological processes observable today shaped Earth in the past",
-          "Doctrine of Survivals — Habits continued without relevance (e.g., handshake)"
-        ]
-      },
-      "Idea of Cultural Evolution": {
-        "description": "Tylor's framework for understanding human cultural development.",
-        "keyPoints": [
-          "One human culture in different stages of development",
-          "Development progresses unilinearly (Savagery → Barbarianism → Civilization)",
-          "Humanity united by one mind (Psychic Unity of Mankind)",
-          "History as improvement of mankind"
-        ]
-      },
-      "Religious Evolution": {
-        "description": "Tylor's theory of how religion evolved through stages:",
-        "keyPoints": [
-          "Animism — all objects (living or non-living) have a soul",
-          "Polytheism — worship of multiple gods representing natural forces in agricultural societies",
-          "Monotheism — one supreme being controlling interconnected natural processes"
-        ]
-      },
-      "Language Evolution": {
-        "description": "Development from gestures & sounds to structured grammar & vocabulary.",
-        "keyPoints": [
-          "Evolution from gestures and sounds",
-          "Development to structured grammar and vocabulary",
-          "Ancient beliefs survive in modern speech (e.g., lunatic from 'luna' meaning moon)"
-        ]
-      },
-      "Criticism of Tylor's Theory": {
-        "description": "Major criticisms of Tylor's evolutionary approach:",
-        "keyPoints": [
-          "Ethnocentric cultural ranking",
-          "Justified colonization & slavery",
-          "Assumption of always-progressive change is flawed",
-          "Assumption that some groups are 'static' is inaccurate",
-          "Based on conjectural history ('armchair anthropology') without fieldwork"
-        ]
-      },
-      "Conclusion": {
-        "description": "Tylor initiated anthropology as a scientific study of culture.",
-        "keyPoints": [
-          "Established anthropology as scientific discipline",
-          "Created framework for cultural study",
-          "Despite criticisms, laid foundation for modern anthropology"
-        ]
+  }
+}
+
+To add new content:
+1. Copy the structure above
+2. Replace "Class Key", "Class Title", "Subtopic Name" etc. with your content
+3. Add as many classes and subtopics as needed
+4. Save this file and refresh the page
+
+💡 Tips:
+- Keep class keys unique (e.g., "Class 1", "Class 2", etc.)
+- Make subtopic names descriptive
+- Use clear, concise key points
+- Maintain proper JSON syntax (commas, quotes, brackets)
+*/
+
+const EMBEDDED_STUDY_DATA = {
+  "studyTopics": {
+    "Class 1": {
+      "class": "1",
+      "title": "Positivism & Classical Evolution",
+      "subtopics": {
+        "Positivism": {
+          "description": "Theoretical approach that advocates application of methods of natural sciences such as observation, experimentation, and empirical verification to the study of social phenomena. It seeks to uncover general laws of human behaviour relying on collected data.",
+          "keyPoints": [
+            "Application of natural science methods",
+            "Observation, experimentation, and empirical verification",
+            "Study of social phenomena",
+            "General laws of human behavior"
+          ]
+        },
+        "Classical Evolution": {
+          "description": "Theory states that social development & culture experienced successive developments in sequences. Evolution occurred from simple → complex, homogeneity → heterogeneity, and indefinite → definite.",
+          "keyPoints": [
+            "Every culture passes through same stages: savagery, barbarianism, civilization",
+            "Similarities due to invention and psychic unity of mankind",
+            "Survivals are practices carried on due to force of habit without contemporary relevance"
+          ]
+        }
       }
-    }
-  },
-  "Class 3": {
-    "title": "Lewis Henry Morgan & Kinship Systems",
-    "subtopics": {
-      "Lewis Henry Morgan": {
-        "description": "Pioneer of American anthropology who documented Iroquois social systems.",
-        "keyPoints": [
-          "Pioneer of American anthropology",
-          "Wrote 'League of the Iroquois'",
-          "Recorded religious, linguistic, cultural, and social practices",
-          "Observed kinship patterns among Iroquois"
-        ]
-      },
-      "Kinship Typology": {
-        "description": "Morgan's classification system for kinship terminology.",
-        "keyPoints": [
-          "Classificatory — same term for lineal & lateral relatives",
-          "Descriptive — different terms for lineal & lateral relatives",
-          "Same terms for father & father's brother in some systems"
-        ]
-      },
-      "Global Kinship Study": {
-        "description": "Morgan's comprehensive study of kinship systems worldwide.",
-        "keyPoints": [
-          "Compiled global kinship data",
-          "Published 'Systems of Consanguinity and Affinity of the Human Family'",
-          "Established comparative kinship methodology"
-        ]
+    },
+    "Class 2": {
+      "class": "2",
+      "title": "Edward Burnett Tylor & Cultural Evolution",
+      "subtopics": {
+        "Edward Burnett Tylor (1832-1917)": {
+          "description": "Founding father of modern anthropology. Discovered similarities between Mexican tribes and communities worldwide.",
+          "keyPoints": [
+            "Founding father of modern anthropology",
+            "Research into the Early History of Mankind and Development",
+            "Cultural similarities due to similar inventions",
+            "People think alike under similar conditions"
+          ]
+        },
+        "Definition of Culture": {
+          "description": "A complex whole consisting of knowledge, belief, arts, morals, laws, customs, and other capabilities.",
+          "keyPoints": [
+            "Knowledge, belief, arts, morals, laws, customs",
+            "Complex whole of human capabilities",
+            "Foundation for anthropological study"
+          ]
+        },
+        "Two Key Principles": {
+          "description": "Tylor reconstructed human cultural history on two main principles:",
+          "keyPoints": [
+            "Uniformitarianism — Geological processes observable today shaped Earth in the past",
+            "Doctrine of Survivals — Habits continued without relevance (e.g., handshake)"
+          ]
+        },
+        "Idea of Cultural Evolution": {
+          "description": "Tylor's framework for understanding human cultural development.",
+          "keyPoints": [
+            "One human culture in different stages of development",
+            "Development progresses unilinearly (Savagery → Barbarianism → Civilization)",
+            "Humanity united by one mind (Psychic Unity of Mankind)",
+            "History as improvement of mankind"
+          ]
+        },
+        "Religious Evolution": {
+          "description": "Tylor's theory of how religion evolved through stages:",
+          "keyPoints": [
+            "Animism — all objects (living or non-living) have a soul",
+            "Polytheism — worship of multiple gods representing natural forces in agricultural societies",
+            "Monotheism — one supreme being controlling interconnected natural processes"
+          ]
+        },
+        "Language Evolution": {
+          "description": "Development from gestures & sounds to structured grammar & vocabulary.",
+          "keyPoints": [
+            "Evolution from gestures and sounds",
+            "Development to structured grammar and vocabulary",
+            "Ancient beliefs survive in modern speech (e.g., lunatic from 'luna' meaning moon)"
+          ]
+        },
+        "Criticism of Tylor's Theory": {
+          "description": "Major criticisms of Tylor's evolutionary approach:",
+          "keyPoints": [
+            "Ethnocentric cultural ranking",
+            "Justified colonization & slavery",
+            "Assumption of always-progressive change is flawed",
+            "Assumption that some groups are 'static' is inaccurate",
+            "Based on conjectural history ('armchair anthropology') without fieldwork"
+          ]
+        },
+        "Conclusion": {
+          "description": "Tylor initiated anthropology as a scientific study of culture.",
+          "keyPoints": [
+            "Established anthropology as scientific discipline",
+            "Created framework for cultural study",
+            "Despite criticisms, laid foundation for modern anthropology"
+          ]
+        }
+      }
+    },
+    "Class 3": {
+      "class": "3",
+      "title": "Lewis Henry Morgan & Kinship Systems",
+      "subtopics": {
+        "Lewis Henry Morgan": {
+          "description": "Pioneer of American anthropology who documented Iroquois social systems.",
+          "keyPoints": [
+            "Pioneer of American anthropology",
+            "Wrote 'League of the Iroquois'",
+            "Recorded religious, linguistic, cultural, and social practices",
+            "Observed kinship patterns among Iroquois"
+          ]
+        },
+        "Kinship Typology": {
+          "description": "Morgan's classification system for kinship terminology.",
+          "keyPoints": [
+            "Classificatory — same term for lineal & lateral relatives",
+            "Descriptive — different terms for lineal & lateral relatives",
+            "Same terms for father & father's brother in some systems"
+          ]
+        },
+        "Global Kinship Study": {
+          "description": "Morgan's comprehensive study of kinship systems worldwide.",
+          "keyPoints": [
+            "Compiled global kinship data",
+            "Published 'Systems of Consanguinity and Affinity of the Human Family'",
+            "Established comparative kinship methodology"
+          ]
+        }
+      }
+    },
+    "Class 4": {
+      "class": '4',
+      "title": "Idea of Family & Criticism of Morgan",
+      "subtopics": {
+        "Idea of Family": {
+          "description": "Morgan outlined 15 evolutionary stages of family, but identified 5 as the most significant in the transition from early group marriage to stable monogamy.",
+          "keyPoints": [
+            "Consanguineous Family — The earliest family structure with group marriage; no incest taboo existed, and it was similar to animal-like behavior. Found in the stage of lower savagery.",
+            "Punaluan Family — Group marriage became more regulated; siblings no longer married, and men of one group married women of another. This laid the foundation of exogamy. Characteristic of mid/upper savagery.",
+            "Syndesman Family — Transitional form with one man marrying one woman, but without exclusive rights. Such unions could be easily dissolved. Found in all barbarian stages.",
+            "Polygamous/Patriarchal Family — Linked with the rise of men and private property; a man had multiple wives, focusing on progeny. Seen in early civilization.",
+            "Monogamous Family — The most advanced stage, characterized by exclusive, lifelong pair bonding and connected to property rights and children. Prevalent in later civilization."
+          ]
+        },
+        "Criticism of Morgan": {
+          "description": "Morgan’s theories, influenced by the context and biases of his time, have faced several criticisms.",
+          "keyPoints": [
+            "Influenced by 19th-century racial theories (e.g., Morton’s claims about brain size); Morgan believed civilized people (whites) were superior.",
+            "Meyer Fortes argued that Morgan's stress on property and economic growth reflected his American context, making it speculative.",
+            "John Lubbock agreed with Morgan that descent evolved logically, but noted that in most present tribal societies, women have low status.",
+            "Henry believed Roman society always had patrilineal descent, theorizing patria potestas was rooted in early patriliny.",
+            "John M Fergusson proposed that female infanticide due to food scarcity led to polyandry, which prevented establishing paternity and led to matriliny; over time, this was replaced by capture and other systems."
+          ]
+        },
+        "Conclusion": {
+          "description": "Although Morgan’s theories had flaws and reflected biases, his work established the importance of kinship studies and scientific fieldwork in anthropology. He was among the first to attempt global, systematic research on family evolution."
+        }
       }
     }
   }
 };
 
-// Map subtopic keys to data keys
-const subtopicKeyMap = {
-  'positivism': 'Positivism',
-  'classical-evolution': 'Classical Evolution',
-  'edward-burnett-tylor': 'Edward Burnett Tylor (1832-1917)',
-  'definition-of-culture': 'Definition of Culture',
-  'two-key-principles': 'Two Key Principles',
-  'idea-of-cultural-evolution': 'Idea of Cultural Evolution',
-  'religious-evolution': 'Religious Evolution',
-  'language-evolution': 'Language Evolution',
-  'criticism-of-tylors-theory': 'Criticism of Tylor\'s Theory',
-  'conclusion': 'Conclusion',
-  'lewis-henry-morgan': 'Lewis Henry Morgan',
-  'kinship-typology': 'Kinship Typology',
-  'global-kinship-study': 'Global Kinship Study'
-};
-
-// Map class keys to data keys
-const classKeyMap = {
-  'class1': 'Class 1',
-  'class2': 'Class 2',
-  'class3': 'Class 3'
-};
-
+// Main Study App Class
 class StudyApp {
   constructor() {
     this.currentTopic = null;
-    this.isMobile = window.innerWidth <= 768;
-    this.sidebarOpen = !this.isMobile;
+    this.studyData = EMBEDDED_STUDY_DATA.studyTopics;
+    this.sidebarOpen = false;
+
+    // DOM Elements
+    this.elements = {
+      sidebar: document.getElementById('sidebar'),
+      sidebarNav: document.getElementById('sidebarNav'),
+      sidebarToggle: document.getElementById('sidebarToggle'),
+      sidebarClose: document.getElementById('sidebarClose'),
+      sidebarOverlay: document.getElementById('sidebarOverlay'),
+      welcomeScreen: document.getElementById('welcomeScreen'),
+      topicContent: document.getElementById('topicContent'),
+      topicTitle: document.getElementById('topicTitle'),
+      topicDescription: document.getElementById('topicDescription'),
+      keyPointsList: document.getElementById('keyPointsList'),
+      backBtn: document.getElementById('backBtn')
+    };
+
     this.init();
   }
 
   init() {
-    this.bindEvents();
-    this.handleResize();
-    this.updateSidebarState();
+    console.log('🚀 Study App loading...');
+    console.log(`📚 Loaded ${Object.keys(this.studyData).length} study topics`);
+
+    this.setupEventListeners();
+    this.renderSidebar();
+    this.showWelcomeScreen();
+
+    console.log('✅ Study App ready!');
   }
 
-  bindEvents() {
+  setupEventListeners() {
     // Sidebar toggle
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebarOverlay = document.getElementById('sidebarOverlay');
-    
-    if (sidebarToggle) {
-      sidebarToggle.addEventListener('click', (e) => {
+    if (this.elements.sidebarToggle) {
+      this.elements.sidebarToggle.addEventListener('click', (e) => {
         e.preventDefault();
         this.toggleSidebar();
       });
     }
-    
-    if (sidebarOverlay) {
-      sidebarOverlay.addEventListener('click', () => this.closeSidebar());
+    if (this.elements.sidebarClose) {
+      this.elements.sidebarClose.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.closeSidebar();
+      });
+    }
+    if (this.elements.sidebarOverlay) {
+      this.elements.sidebarOverlay.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.closeSidebar();
+      });
     }
 
-    // App title click - return to welcome
-    const appTitle = document.getElementById('appTitle');
-    if (appTitle) {
-      appTitle.addEventListener('click', () => this.showWelcomeScreen());
+    // Back button
+    if (this.elements.backBtn) {
+      this.elements.backBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.showWelcomeScreen();
+      });
     }
 
-    // Topic group headers
-    const topicGroupHeaders = document.querySelectorAll('.topic-group-header');
-    topicGroupHeaders.forEach(header => {
-      header.addEventListener('click', (e) => {
-        e.preventDefault();
-        const groupId = e.currentTarget.dataset.group;
-        this.toggleTopicGroup(groupId);
-      });
-    });
-
-    // Subtopics
-    const subtopics = document.querySelectorAll('.subtopic');
-    subtopics.forEach(subtopic => {
-      subtopic.addEventListener('click', (e) => {
-        e.preventDefault();
-        const topicClass = e.currentTarget.dataset.topic;
-        const subtopicKey = e.currentTarget.dataset.subtopic;
-        this.showTopicContent(topicClass, subtopicKey);
-      });
-    });
-
-    // Window resize
-    window.addEventListener('resize', () => this.handleResize());
-
-    // Escape key to close sidebar on mobile
+    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && this.isMobile && this.sidebarOpen) {
+      if (e.key === 'Escape') {
+        this.closeSidebar();
+      }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && this.sidebarOpen) {
         this.closeSidebar();
       }
     });
   }
 
-  toggleSidebar() {
-    if (this.sidebarOpen) {
-      this.closeSidebar();
-    } else {
-      this.openSidebar();
+  renderSidebar() {
+    if (!this.elements.sidebarNav) return;
+
+    const nav = this.elements.sidebarNav;
+    nav.innerHTML = '';
+
+    Object.entries(this.studyData).forEach(([classKey, classData]) => {
+      const topicGroup = this.createTopicGroup(classKey, classData);
+      nav.appendChild(topicGroup);
+    });
+  }
+
+  createTopicGroup(classKey, classData) {
+    const groupDiv = document.createElement('div');
+    groupDiv.className = 'topic-group';
+
+    // Create header button
+    console.log(classData)
+    const header = document.createElement('button');
+    header.className = 'topic-group__header';
+    header.setAttribute('aria-expanded', 'false');
+    header.innerHTML = `
+      <span>Class ${classData.class} : ${classData.title} </span>
+      <span class="toggle-icon">▶</span>
+    `;
+
+    // Create content container
+    const content = document.createElement('div');
+    content.className = 'topic-group__content';
+
+    // Create subtopic links
+    Object.entries(classData.subtopics).forEach(([subtopicKey, subtopicData]) => {
+      const link = document.createElement('a');
+      link.href = '#';
+      link.className = 'subtopic-link';
+      link.textContent = subtopicKey;
+
+      // Add click event for subtopic navigation
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log(`Clicked subtopic: ${subtopicKey}`);
+        this.showTopic(subtopicKey, subtopicData);
+        this.updateActiveLink(link);
+
+        // Close sidebar on mobile after selection
+        if (window.innerWidth <= 768) {
+          this.closeSidebar();
+        }
+      });
+
+      content.appendChild(link);
+    });
+
+    // Add toggle functionality for topic group expansion
+    header.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const isExpanded = header.getAttribute('aria-expanded') === 'true';
+      const newState = !isExpanded;
+
+      console.log(`Toggling topic group: ${classData.title}, will be expanded: ${newState}`);
+
+      // Update aria-expanded attribute
+      header.setAttribute('aria-expanded', newState.toString());
+
+      // Toggle content visibility using CSS class
+      if (newState) {
+        content.classList.add('expanded');
+      } else {
+        content.classList.remove('expanded');
+      }
+    });
+
+    groupDiv.appendChild(header);
+    groupDiv.appendChild(content);
+
+    return groupDiv;
+  }
+
+  updateActiveLink(activeLink) {
+    // Remove active class from all links
+    document.querySelectorAll('.subtopic-link').forEach(link => {
+      link.classList.remove('active');
+    });
+
+    // Add active class to clicked link
+    if (activeLink) {
+      activeLink.classList.add('active');
     }
   }
 
-  openSidebar() {
-    this.sidebarOpen = true;
-    this.updateSidebarState();
+  showTopic(title, topicData) {
+    console.log(`Showing topic: ${title}`);
+    console.log('Topic data:', topicData);
+
+    this.currentTopic = { title, ...topicData };
+
+    // Update topic title
+    if (this.elements.topicTitle) {
+      this.elements.topicTitle.textContent = title;
+      console.log(`Set topic title to: ${title}`);
+    }
+
+    // Update topic description
+    if (this.elements.topicDescription) {
+      this.elements.topicDescription.textContent = topicData.description;
+      console.log('Set topic description');
+    }
+
+    // Clear and update key points list
+    if (this.elements.keyPointsList) {
+      this.elements.keyPointsList.innerHTML = '';
+      if (topicData.keyPoints && Array.isArray(topicData.keyPoints)) {
+        topicData.keyPoints.forEach(point => {
+          const li = document.createElement('li');
+          li.textContent = point;
+          this.elements.keyPointsList.appendChild(li);
+        });
+        console.log(`Added ${topicData.keyPoints.length} key points`);
+      }
+    }
+
+    // Hide welcome screen and show topic content
+    if (this.elements.welcomeScreen) {
+      this.elements.welcomeScreen.classList.add('hidden');
+      console.log('Hid welcome screen');
+    }
+    if (this.elements.topicContent) {
+      this.elements.topicContent.classList.remove('hidden');
+      console.log('Showed topic content');
+    }
+
+    console.log('✅ Topic content displayed successfully');
+  }
+
+  showWelcomeScreen() {
+    console.log('Showing welcome screen');
+
+    this.currentTopic = null;
+
+    // Remove active class from all sidebar links
+    document.querySelectorAll('.subtopic-link').forEach(link => {
+      link.classList.remove('active');
+    });
+
+    // Hide topic content and show welcome screen
+    if (this.elements.topicContent) {
+      this.elements.topicContent.classList.add('hidden');
+      console.log('Hid topic content');
+    }
+    if (this.elements.welcomeScreen) {
+      this.elements.welcomeScreen.classList.remove('hidden');
+      console.log('Showed welcome screen');
+    }
+
+    console.log('✅ Welcome screen displayed successfully');
+  }
+
+  toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
+
+    if (this.elements.sidebar) {
+      this.elements.sidebar.classList.toggle('open', this.sidebarOpen);
+    }
+    if (this.elements.sidebarOverlay) {
+      this.elements.sidebarOverlay.classList.toggle('active', this.sidebarOpen);
+    }
+    if (this.elements.sidebarToggle) {
+      this.elements.sidebarToggle.classList.toggle('active', this.sidebarOpen);
+    }
+
+    console.log(`Sidebar ${this.sidebarOpen ? 'opened' : 'closed'}`);
   }
 
   closeSidebar() {
     this.sidebarOpen = false;
-    this.updateSidebarState();
-  }
 
-  updateSidebarState() {
-    const sidebar = document.getElementById('sidebar');
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebarOverlay = document.getElementById('sidebarOverlay');
-
-    if (!sidebar || !sidebarToggle || !sidebarOverlay) return;
-
-    if (this.isMobile) {
-      // Mobile behavior
-      if (this.sidebarOpen) {
-        sidebar.classList.add('open');
-        sidebarOverlay.classList.add('active');
-        sidebarToggle.classList.add('active');
-      } else {
-        sidebar.classList.remove('open');
-        sidebarOverlay.classList.remove('active');
-        sidebarToggle.classList.remove('active');
-      }
-    } else {
-      // Desktop behavior
-      if (this.sidebarOpen) {
-        sidebar.style.transform = 'translateX(0)';
-        sidebarToggle.classList.add('active');
-      } else {
-        sidebar.style.transform = 'translateX(-100%)';
-        sidebarToggle.classList.remove('active');
-      }
-      sidebarOverlay.classList.remove('active');
+    if (this.elements.sidebar) {
+      this.elements.sidebar.classList.remove('open');
     }
-  }
-
-  toggleTopicGroup(groupId) {
-    const groupElement = document.getElementById(groupId);
-    const headerElement = document.querySelector(`[data-group="${groupId}"]`);
-    
-    if (groupElement && headerElement) {
-      const isExpanded = groupElement.classList.contains('expanded');
-      
-      if (isExpanded) {
-        groupElement.classList.remove('expanded');
-        headerElement.classList.remove('expanded');
-      } else {
-        groupElement.classList.add('expanded');
-        headerElement.classList.add('expanded');
-      }
+    if (this.elements.sidebarOverlay) {
+      this.elements.sidebarOverlay.classList.remove('active');
     }
-  }
-
-  showTopicContent(topicClass, subtopicKey) {
-    // Clear active states
-    document.querySelectorAll('.subtopic.active').forEach(el => {
-      el.classList.remove('active');
-    });
-
-    // Set active state
-    const clickedSubtopic = document.querySelector(`[data-topic="${topicClass}"][data-subtopic="${subtopicKey}"]`);
-    if (clickedSubtopic) {
-      clickedSubtopic.classList.add('active');
+    if (this.elements.sidebarToggle) {
+      this.elements.sidebarToggle.classList.remove('active');
     }
 
-    // Get data
-    const classKey = classKeyMap[topicClass];
-    const subtopicName = subtopicKeyMap[subtopicKey];
-    
-    if (classKey && subtopicName && studyData[classKey] && studyData[classKey].subtopics[subtopicName]) {
-      const topicData = studyData[classKey].subtopics[subtopicName];
-      
-      // Update content
-      const topicTitle = document.getElementById('topicTitle');
-      const topicDescription = document.getElementById('topicDescription');
-      
-      if (topicTitle) topicTitle.textContent = subtopicName;
-      if (topicDescription) topicDescription.textContent = topicData.description;
-      
-      // Update key points
-      const keyPointsList = document.getElementById('keyPointsList');
-      if (keyPointsList) {
-        keyPointsList.innerHTML = '';
-        topicData.keyPoints.forEach(point => {
-          const li = document.createElement('li');
-          li.textContent = point;
-          keyPointsList.appendChild(li);
-        });
-      }
-
-      // Show topic content, hide welcome
-      const welcomeScreen = document.getElementById('welcomeScreen');
-      const topicContent = document.getElementById('topicContent');
-      
-      if (welcomeScreen) welcomeScreen.classList.add('hidden');
-      if (topicContent) topicContent.classList.remove('hidden');
-
-      // Close sidebar on mobile after selection
-      if (this.isMobile) {
-        this.closeSidebar();
-      }
-
-      this.currentTopic = { topicClass, subtopicKey };
-    }
-  }
-
-  showWelcomeScreen() {
-    // Clear active states
-    document.querySelectorAll('.subtopic.active').forEach(el => {
-      el.classList.remove('active');
-    });
-
-    // Show welcome, hide topic content
-    const welcomeScreen = document.getElementById('welcomeScreen');
-    const topicContent = document.getElementById('topicContent');
-    
-    if (topicContent) topicContent.classList.add('hidden');
-    if (welcomeScreen) welcomeScreen.classList.remove('hidden');
-
-    this.currentTopic = null;
-  }
-
-  handleResize() {
-    const newIsMobile = window.innerWidth <= 768;
-    
-    if (newIsMobile !== this.isMobile) {
-      this.isMobile = newIsMobile;
-      
-      // Reset sidebar state for new screen size
-      if (this.isMobile) {
-        this.sidebarOpen = false;
-      } else {
-        this.sidebarOpen = true;
-      }
-      
-      this.updateSidebarState();
-    }
+    console.log('Sidebar closed');
   }
 }
 
 // Initialize the app when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  new StudyApp();
+  console.log('DOM loaded, initializing Study App...');
+  const app = new StudyApp();
+
+  // Make app globally available for debugging
+  window.studyApp = app;
 });
+
+// Console information for developers
+console.log(`
+🎓 Study App - Developer Information
+
+📝 TO EDIT STUDY CONTENT:
+1. Open this app.js file in a text editor
+2. Find the EMBEDDED_STUDY_DATA section at the top
+3. Edit the JSON structure with your content
+4. Keep the same format: classes contain subtopics with descriptions and key points
+5. Save the file and refresh the page
+
+📚 CURRENT DATA STRUCTURE:
+- Classes: ${Object.keys(EMBEDDED_STUDY_DATA.studyTopics).length}
+- Total Subtopics: ${Object.values(EMBEDDED_STUDY_DATA.studyTopics).reduce((total, classData) => total + Object.keys(classData.subtopics).length, 0)}
+
+✨ FEATURES:
+- Instant loading with embedded data
+- Responsive sidebar navigation  
+- Mobile-friendly design
+- Clean, distraction-free interface
+- Easy content editing in JavaScript
+
+🛠️ STRUCTURE EXAMPLE:
+{
+  "studyTopics": {
+    "Your Class": {
+      "title": "Your Class Title",
+      "subtopics": {
+        "Topic Name": {
+          "description": "Detailed description...",
+          "keyPoints": ["Point 1", "Point 2", "Point 3"]
+        }
+      }
+    }
+  }
+}
+`);
+
+// Export for debugging if needed
+window.StudyApp = StudyApp;
+window.STUDY_DATA = EMBEDDED_STUDY_DATA;
