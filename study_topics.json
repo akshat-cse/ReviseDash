@@ -122,5 +122,33 @@
         ]
       }
     }
+  },
+  "Class 4":{
+    "title": "Idea of Family & Criticism of Morgan",
+    "subtopics": {
+      "Idea of Family": {
+        "description": "Morgan outlined 15 evolutionary stages of family, but identified 5 as the most significant in the transition from early group marriage to stable monogamy.",
+        "keyPoints": [
+          "Consanguineous Family — The earliest family structure with group marriage; no incest taboo existed, and it was similar to animal-like behavior. Found in the stage of lower savagery.",
+          "Punaluan Family — Group marriage became more regulated; siblings no longer married, and men of one group married women of another. This laid the foundation of exogamy. Characteristic of mid/upper savagery.",
+          "Syndesman Family — Transitional form with one man marrying one woman, but without exclusive rights. Such unions could be easily dissolved. Found in all barbarian stages.",
+          "Polygamous/Patriarchal Family — Linked with the rise of men and private property; a man had multiple wives, focusing on progeny. Seen in early civilization.",
+          "Monogamous Family — The most advanced stage, characterized by exclusive, lifelong pair bonding and connected to property rights and children. Prevalent in later civilization."
+        ]
+      },
+      "Criticism of Morgan": {
+        "description": "Morgan’s theories, influenced by the context and biases of his time, have faced several criticisms.",
+        "keyPoints": [
+          "Influenced by 19th-century racial theories (e.g., Morton’s claims about brain size); Morgan believed civilized people (whites) were superior.",
+          "Meyer Fortes argued that Morgan's stress on property and economic growth reflected his American context, making it speculative.",
+          "John Lubbock agreed with Morgan that descent evolved logically, but noted that in most present tribal societies, women have low status.",
+          "Henry believed Roman society always had patrilineal descent, theorizing patria potestas was rooted in early patriliny.",
+          "John M Fergusson proposed that female infanticide due to food scarcity led to polyandry, which prevented establishing paternity and led to matriliny; over time, this was replaced by capture and other systems."
+        ]
+      },
+      "Conclusion": {
+        "description": "Although Morgan’s theories had flaws and reflected biases, his work established the importance of kinship studies and scientific fieldwork in anthropology. He was among the first to attempt global, systematic research on family evolution."
+      }
+    }
   }
 }
