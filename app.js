@@ -191,6 +191,62 @@ const EMBEDDED_STUDY_DATA = {
         },
         "Conclusion": {
           "description": "Although Morgan’s theories had flaws and reflected biases, his work established the importance of kinship studies and scientific fieldwork in anthropology. He was among the first to attempt global, systematic research on family evolution."
+        },
+        "Frazer's Stages of Mental Advancement": {
+          "description": "In his book 'The Golden Bough', Frazer proposed that the human psyche is marked by three elements, which correspond to three stages in human mental advancement: Magic, Religion, and Science. Each stage represents a distinctive way humans tried to understand and control their world.",
+          "keyPoints": [
+            "Three stages: Magic → Religion → Science",
+            "Each stage reflects a different approach to explaining natural phenomena",
+            "Transitions show evolution in human thinking"
+          ]
+        },
+        "Magical Stage": {
+          "description": "This stage assumes that the universe is regulated by universal, impersonal, and unchanging laws. Magicians were believed to know these laws and use them to control natural forces. Magical beliefs were classified by Frazer into two types: homeopathic magic (like produces like) and contagious magic (influence remains after contact). Over time, repeated failure of magic led to a shift towards religious thinking.",
+          "keyPoints": [
+            "Homeopathic magic: based on similarity (like produces like)",
+            "Contagious magic: based on contact and influence",
+            "Magicians believed to control nature; eventual failure in results led to rise of religion"
+          ]
+        },
+        "Religion": {
+          "description": "Religion is based on belief in superhuman or supernatural powers controlling the world. People tried to please these forces through prayers and sacrifices, showing submissiveness and seeking favors. As faith in magic faded, human psyche shifted toward religion.",
+          "keyPoints": [
+            "Belief in supernatural powers",
+            "Use of prayer, rituals, and sacrifices",
+            "Attitude of submission to unknown forces"
+          ]
+        },
+        "Science": {
+          "description": "With the development of rational thinking, humans began to explain the causes of natural phenomena. People developed the capacity to recognize patterns and trends, using empirical and rational methods to find explanations. The human psyche shifted towards science and rationality.",
+          "keyPoints": [
+            "Development of rationality and observation",
+            "Explaining causes of natural events through empirical methods",
+            "Shift toward scientific and logical thinking"
+          ]
+        },
+        "Totemism": {
+          "description": "Totemism is a belief in mystical kinship between humans and specific plants or animals, often prohibiting the killing or consumption of the totem animal or plant. Frazer argued it originated from belief in souls and cited Australian aboriginal practices. Totemism also contributed to social practices like exogamy.",
+          "keyPoints": [
+            "Mystical kinship with certain plants/animals (totems)",
+            "Prohibition on harming or consuming the totem",
+            "Linked to beliefs about the soul and origin myths"
+          ]
+        },
+        "Criticism": {
+          "description": "Frazer’s theory, while influential, faced criticism for lack of direct observation and overgeneralization. Later researchers found limitations in his reliance on secondary data and broad evolutionary assumptions. As more fieldwork was done, some of Frazer's conclusions were revised or rejected.",
+          "keyPoints": [
+            "Lack of first-hand observation/data",
+            "Overgeneralized evolutionary framework",
+            "Subsequent research led to revision of his ideas"
+          ]
+        },
+        "Conclusion": {
+          "description": "Frazer's theory had great influence during its time. He himself acknowledged the limitations of his work, stating that new evidence from direct observation of societies would eventually supersede his ideas.",
+          "keyPoints": [
+            "Important early contribution but with limitations",
+            "Frazer foresaw his work being revised with future research",
+            "Highlighted the evolutionary view of human thought"
+          ]
         }
       }
     }
