@@ -249,7 +249,68 @@ const EMBEDDED_STUDY_DATA = {
           ]
         }
       }
+    },
+    "Class 5": {
+    "class": "5",
+    "title": "Diffusionism",
+    "subtopics": {
+      "Overview": {
+        "description": "Diffusionism argues humans are generally uninventive and that major inventions occurred only once, spreading between populations and across the globe via diffusion or migration. Traits may change in new environments and are adopted when economically or socially useful. It rejects classical evolutionism's 'independent invention' and unilinear progress, suggesting change can be progressive or degenerative.",
+        "keyPoints": [
+          "Human culture changes mainly via diffusion or migration",
+          "Traits altered by environmental context",
+          "Adoption based on economic or social utility",
+          "Rejects independent invention and unilinear evolution"
+        ]
+      },
+      "British School": {
+        "description": "Founded by G.E. Smith, it claimed ancient Egypt was the origin of all major cultural achievements that spread through migration and trade. Smith linked Egyptian megalithic forms to global monuments and applied Wittfogel’s Hydraulic Theory, arguing irrigation needs led to centralized states that spread Egyptian culture.",
+        "keyPoints": [
+          "Egypt as universal origin of culture",
+          "Megalith comparisons — Bali, Japan, Mayan, America",
+          "Hydraulic Theory: irrigation → centralized authority",
+          "Primary diffusion: direct from Egypt to nearby areas",
+          "Secondary diffusion: spread from primary-affected regions"
+        ]
+      },
+      "W.J. Perry": {
+        "description": "Argued in 'Children of the Sun' that sun-god worship originated in Egypt, where rulers were seen as incarnations of the sun, and the belief spread globally.",
+        "keyPoints": [
+          "Sun-god worship from Egypt",
+          "Rulers as divine sun incarnations",
+          "Spread through migrations and influence"
+        ]
+      },
+      "W.H.R. Rivers": {
+        "description": "Moderate diffusionist focusing on cultural loss and degeneration. In Melanesia, loss of boat-building suggested past contact. In Australian Aborigines, variations in burial rituals indicated successive male migrations integrating into local societies.",
+        "keyPoints": [
+          "Concept of uninventiveness and degeneration",
+          "Loss of cultural skills over time",
+          "Migration evidence from burial practices",
+          "Male migrants adopting wife's culture except burial"
+        ]
+      },
+      "Criticism": {
+        "description": "Critics argue diffusionism wrongly assumes all inventions came from a single source like Egypt. It overlooked existing diverse cultures, relied on conjecture without evidence, and focused mainly on material culture while ignoring non-material aspects. British diffusionism lost relevance by mid-20th century.",
+        "keyPoints": [
+          "Overgeneralization of origins",
+          "Neglect of independent innovations",
+          "Evidence lacking; conjectural history",
+          "Focus on material over non-material culture",
+          "First diffusion theory rejected globally"
+        ]
+      },
+      "German School": {
+        "description": "Proposed that cultural traits originated independently in multiple regions and times. Each origin was a 'culture circle' from which traits spread in concentric patterns, identifiable through layered cultural analysis.",
+        "keyPoints": [
+          "Multiple independent points of origin",
+          "Cultural traits spread through migration",
+          "Concept of 'culture circle'",
+          "Diffusion detected by examining cultural layers"
+        ]
+      }
     }
+   }
   }
 };
 
