@@ -255,58 +255,55 @@ const EMBEDDED_STUDY_DATA = {
     "title": "Diffusionism",
     "subtopics": {
       "Overview": {
-        "description": "Diffusionism argues humans are generally uninventive and that major inventions occurred only once, spreading between populations and across the globe via diffusion or migration. Traits may change in new environments and are adopted when economically or socially useful. It rejects classical evolutionism's 'independent invention' and unilinear progress, suggesting change can be progressive or degenerative.",
+        "description": "argues that man is uninventive in nature and important inventions happened only once and then are transmitted from people to people and sometimes across the globe through diffusion or migration. In course of diffusion a cultural trait may lose its original form and change as per different environment.",
         "keyPoints": [
-          "Human culture changes mainly via diffusion or migration",
-          "Traits altered by environmental context",
-          "Adoption based on economic or social utility",
-          "Rejects independent invention and unilinear evolution"
+          "Any cultural trait will be adopted only when it is useful economically or socially.",
+          "They challenged the idea of ‘relative invention’ by classical evolutionists and rejected the idea of unilinear progress.",
+          "Cultural change can be progressive as well as degenerative.",
+          "→ British → German → American"
         ]
       },
       "British School": {
-        "description": "Founded by G.E. Smith, it claimed ancient Egypt was the origin of all major cultural achievements that spread through migration and trade. Smith linked Egyptian megalithic forms to global monuments and applied Wittfogel’s Hydraulic Theory, arguing irrigation needs led to centralized states that spread Egyptian culture.",
+        "description": "states that ancient Egypt was the source of all major cultural achievements, discoveries and inventions which then spread to other areas through migration and trade.",
         "keyPoints": [
-          "Egypt as universal origin of culture",
-          "Megalith comparisons — Bali, Japan, Mayan, America",
-          "Hydraulic Theory: irrigation → centralized authority",
-          "Primary diffusion: direct from Egypt to nearby areas",
-          "Secondary diffusion: spread from primary-affected regions"
+          "G. E. Smith was the founder of the British school of diffusion.",
+          "In his book 'Origin of Civilization' he argued that all megalithic phenomena originated in Egypt. Small groups of people moved mainly by sea, settled at different places and made crude imitations of Egyptian monuments. He compared Egyptian megaliths with Balinese temples, Japanese pagodas, Mayan pyramids and American burials to demonstrate Egyptian influence.",
+          "Smith was influenced by Karl Wittfogel’s Hydraulic theory of state formation: civilization is the outcome of administrative requirements of large-scale irrigation.",
+          "In arid or semi-arid areas large-scale irrigation management led to centralized bureaucratic states requiring coordination, planning, labour mobilization and control of water systems.",
+          "These irrigation systems promoted agriculture and prosperity. Hydraulic engineers were elevated to kings and worshipped as deities.",
+          "Egyptians later developed mummification, discovered navigation and travelled to far-off lands to spread their culture.",
+          "Smith identified two stages of diffusion: Primary diffusion – direct from Egypt to Syria, Saudi Arabia and Middle East; Secondary diffusion – spread from primary-affected regions to other parts of the world."
         ]
       },
-      "W.J. Perry": {
-        "description": "Argued in 'Children of the Sun' that sun-god worship originated in Egypt, where rulers were seen as incarnations of the sun, and the belief spread globally.",
+      "WJ Perry": {
+        "description": "In 'The Children of the Sun' argued that the worship of the sun god originated in Egypt.",
         "keyPoints": [
-          "Sun-god worship from Egypt",
-          "Rulers as divine sun incarnations",
-          "Spread through migrations and influence"
+          "Egyptians believed the sun god incarnated as rulers (kings).",
+          "This belief spread to other parts of the world."
         ]
       },
-      "W.H.R. Rivers": {
-        "description": "Moderate diffusionist focusing on cultural loss and degeneration. In Melanesia, loss of boat-building suggested past contact. In Australian Aborigines, variations in burial rituals indicated successive male migrations integrating into local societies.",
+      "WHR Rivers": {
+        "description": "Rivers was a moderate diffusionist unlike Smith and Perry. In 'History of Melanesian Society' he gave the idea of ‘uninventiveness and degeneration’. In some Melanesian islands people had lost the art of boat making, which he argued they must have once known to reach there.",
         "keyPoints": [
-          "Concept of uninventiveness and degeneration",
-          "Loss of cultural skills over time",
-          "Migration evidence from burial practices",
-          "Male migrants adopting wife's culture except burial"
+          "In Australian Aborigines he noted five kinds of burial rituals, concluding successive male migrations occurred. Males married local women, adopted their language and culture except burial customs."
         ]
       },
       "Criticism": {
-        "description": "Critics argue diffusionism wrongly assumes all inventions came from a single source like Egypt. It overlooked existing diverse cultures, relied on conjecture without evidence, and focused mainly on material culture while ignoring non-material aspects. British diffusionism lost relevance by mid-20th century.",
+        "description": "Though every culture becomes more than it invents, it is wrong to say all inventions happened in one place (Egypt). This was the greatest weakness of this theory.",
         "keyPoints": [
-          "Overgeneralization of origins",
-          "Neglect of independent innovations",
-          "Evidence lacking; conjectural history",
-          "Focus on material over non-material culture",
-          "First diffusion theory rejected globally"
+          "Overlooked several contemporary cultures in the world.",
+          "Theory of uninventiveness used as an explanatory principle without considering cultural context.",
+          "Based on conjectural history without evidence.",
+          "Focused on material culture and ignored non-material aspects.",
+          "British school lost relevance by mid-20th century as nuanced cultural change theories emerged.",
+          "Last diffusion theory to emerge but first to be rejected unanimously."
         ]
       },
       "German School": {
-        "description": "Proposed that cultural traits originated independently in multiple regions and times. Each origin was a 'culture circle' from which traits spread in concentric patterns, identifiable through layered cultural analysis.",
+        "description": "Argued that different cultural traits originated independently at different points and times from where they spread mainly through migration. The point of origin is called a culture circle or district.",
         "keyPoints": [
-          "Multiple independent points of origin",
-          "Cultural traits spread through migration",
-          "Concept of 'culture circle'",
-          "Diffusion detected by examining cultural layers"
+          "Traits spread in concentric circles from their origin.",
+          "Diffusion patterns identified by examining layered cultures."
         ]
       }
     }
