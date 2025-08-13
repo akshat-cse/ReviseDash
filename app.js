@@ -251,63 +251,129 @@ const EMBEDDED_STUDY_DATA = {
       }
     },
     "Class 5": {
-    "class": "5",
-    "title": "Diffusionism",
-    "subtopics": {
-      "Overview": {
-        "description": "argues that man is uninventive in nature and important inventions happened only once and then are transmitted from people to people and sometimes across the globe through diffusion or migration. In course of diffusion a cultural trait may lose its original form and change as per different environment.",
-        "keyPoints": [
-          "Any cultural trait will be adopted only when it is useful economically or socially.",
-          "They challenged the idea of ‘relative invention’ by classical evolutionists and rejected the idea of unilinear progress.",
-          "Cultural change can be progressive as well as degenerative.",
-          "→ British → German → American"
-        ]
-      },
-      "British School": {
-        "description": "states that ancient Egypt was the source of all major cultural achievements, discoveries and inventions which then spread to other areas through migration and trade.",
-        "keyPoints": [
-          "G. E. Smith was the founder of the British school of diffusion.",
-          "In his book 'Origin of Civilization' he argued that all megalithic phenomena originated in Egypt. Small groups of people moved mainly by sea, settled at different places and made crude imitations of Egyptian monuments. He compared Egyptian megaliths with Balinese temples, Japanese pagodas, Mayan pyramids and American burials to demonstrate Egyptian influence.",
-          "Smith was influenced by Karl Wittfogel’s Hydraulic theory of state formation: civilization is the outcome of administrative requirements of large-scale irrigation.",
-          "In arid or semi-arid areas large-scale irrigation management led to centralized bureaucratic states requiring coordination, planning, labour mobilization and control of water systems.",
-          "These irrigation systems promoted agriculture and prosperity. Hydraulic engineers were elevated to kings and worshipped as deities.",
-          "Egyptians later developed mummification, discovered navigation and travelled to far-off lands to spread their culture.",
-          "Smith identified two stages of diffusion: Primary diffusion – direct from Egypt to Syria, Saudi Arabia and Middle East; Secondary diffusion – spread from primary-affected regions to other parts of the world."
-        ]
-      },
-      "WJ Perry": {
-        "description": "In 'The Children of the Sun' argued that the worship of the sun god originated in Egypt.",
-        "keyPoints": [
-          "Egyptians believed the sun god incarnated as rulers (kings).",
-          "This belief spread to other parts of the world."
-        ]
-      },
-      "WHR Rivers": {
-        "description": "Rivers was a moderate diffusionist unlike Smith and Perry. In 'History of Melanesian Society' he gave the idea of ‘uninventiveness and degeneration’. In some Melanesian islands people had lost the art of boat making, which he argued they must have once known to reach there.",
-        "keyPoints": [
-          "In Australian Aborigines he noted five kinds of burial rituals, concluding successive male migrations occurred. Males married local women, adopted their language and culture except burial customs."
-        ]
-      },
-      "Criticism": {
-        "description": "Though every culture becomes more than it invents, it is wrong to say all inventions happened in one place (Egypt). This was the greatest weakness of this theory.",
-        "keyPoints": [
-          "Overlooked several contemporary cultures in the world.",
-          "Theory of uninventiveness used as an explanatory principle without considering cultural context.",
-          "Based on conjectural history without evidence.",
-          "Focused on material culture and ignored non-material aspects.",
-          "British school lost relevance by mid-20th century as nuanced cultural change theories emerged.",
-          "Last diffusion theory to emerge but first to be rejected unanimously."
-        ]
-      },
-      "German School": {
-        "description": "Argued that different cultural traits originated independently at different points and times from where they spread mainly through migration. The point of origin is called a culture circle or district.",
-        "keyPoints": [
-          "Traits spread in concentric circles from their origin.",
-          "Diffusion patterns identified by examining layered cultures."
-        ]
+      "class": "5",
+      "title": "Diffusionism",
+      "subtopics": {
+        "Overview": {
+          "description": "Diffusionism argues humans are generally uninventive and that major inventions occurred only once, spreading between populations and across the globe via diffusion or migration. Traits may change in new environments and are adopted when economically or socially useful. It rejects classical evolutionism's 'independent invention' and unilinear progress, suggesting change can be progressive or degenerative.",
+          "keyPoints": [
+            "Human culture changes mainly via diffusion or migration",
+            "Traits altered by environmental context",
+            "Adoption based on economic or social utility",
+            "Rejects independent invention and unilinear evolution"
+          ]
+        },
+        "British School": {
+          "description": "Founded by G.E. Smith, it claimed ancient Egypt was the origin of all major cultural achievements that spread through migration and trade. Smith linked Egyptian megalithic forms to global monuments and applied Wittfogel’s Hydraulic Theory, arguing irrigation needs led to centralized states that spread Egyptian culture.",
+          "keyPoints": [
+            "Egypt as universal origin of culture",
+            "Megalith comparisons — Bali, Japan, Mayan, America",
+            "Hydraulic Theory: irrigation → centralized authority",
+            "Primary diffusion: direct from Egypt to nearby areas",
+            "Secondary diffusion: spread from primary-affected regions"
+          ]
+        },
+        "W.J. Perry": {
+          "description": "Argued in 'Children of the Sun' that sun-god worship originated in Egypt, where rulers were seen as incarnations of the sun, and the belief spread globally.",
+          "keyPoints": [
+            "Sun-god worship from Egypt",
+            "Rulers as divine sun incarnations",
+            "Spread through migrations and influence"
+          ]
+        },
+        "W.H.R. Rivers": {
+          "description": "Moderate diffusionist focusing on cultural loss and degeneration. In Melanesia, loss of boat-building suggested past contact. In Australian Aborigines, variations in burial rituals indicated successive male migrations integrating into local societies.",
+          "keyPoints": [
+            "Concept of uninventiveness and degeneration",
+            "Loss of cultural skills over time",
+            "Migration evidence from burial practices",
+            "Male migrants adopting wife's culture except burial"
+          ]
+        },
+        "Criticism": {
+          "description": "Critics argue diffusionism wrongly assumes all inventions came from a single source like Egypt. It overlooked existing diverse cultures, relied on conjecture without evidence, and focused mainly on material culture while ignoring non-material aspects. British diffusionism lost relevance by mid-20th century.",
+          "keyPoints": [
+            "Overgeneralization of origins",
+            "Neglect of independent innovations",
+            "Evidence lacking; conjectural history",
+            "Focus on material over non-material culture",
+            "First diffusion theory rejected globally"
+          ]
+        },
+        "German School": {
+          "description": "Proposed that cultural traits originated independently in multiple regions and times. Each origin was a 'culture circle' from which traits spread in concentric patterns, identifiable through layered cultural analysis.",
+          "keyPoints": [
+            "Multiple independent points of origin",
+            "Cultural traits spread through migration",
+            "Concept of 'culture circle'",
+            "Diffusion detected by examining cultural layers"
+          ]
+        }
+      }
+    },
+    "Class 56": {
+      "class": "56",
+      "title": "Caste: Dipankar Gupta, Lohia & Untouchability",
+      "subtopics": {
+        "Dipankar Gupta": {
+          "description": "Gupta argues caste is no longer a system of interdependent groups but represents multiple competing groups with discrete identities and a muddled hierarchy.",
+          "keyPoints": [
+            "Caste functions as mutually exclusive groups maintained by endogamy.",
+            "Identity, not hierarchy, is defining; origin stories strengthen pride.",
+            "Village caste ranking is ambiguous and fluid, not based on ritual purity.",
+            "Multiple versions of hierarchy exist; lower castes assert higher status via power and wealth.",
+            "Example: Pasi origin myth — rear pigs to protect women from invading Muslims.",
+            "Gaurang Sahay on Koeris, Yadavs, Kurmis — enough wealth to sanskritize but reject it; use own rituals."
+          ]
+        },
+        "Lohia’s Perspective": {
+          "description": "Lohia links caste to division of labour, persisting with land centralization and urban land-owning classes.",
+          "keyPoints": [
+            "This condition would promote service classes such as priestly class to provide ritual services, vaishya for trade, shudras for manual labour.",
+            "Brahmin, K & V are varnas; real caste among shudras, names reflect occupations.",
+            "Examples: Teli, Sonar, Kumhar, Lohar.",
+            "Caste promotes inequality, prevents mobility, causes split personality among Hindus, and leads to historical stagnation."
+          ]
+        },
+        "Untouchability - Definition & Data": {
+          "description": "27% of Indian households still practice untouchability; almost every 3rd Hindu practices it and 160 million people in India are considered untouchable.",
+          "keyPoints": [
+            "Amit Thorat and Omkar Joshi: Untouchables — physically and ritually polluting due to occupation.",
+            "Marc Gallanter: Includes all instances of treating others as ritually unclean; e.g., women at childbirth, menstruating women, those who eat forbidden food, certain low castes."
+          ]
+        },
+        "Michael Moffatt Study": {
+          "description": "Conducted four-month field work in Endavur village, TN; found pervasive cultural consensus of untouchable castes with upper caste values.",
+          "keyPoints": [
+            "View from bottom matches view from top; UT caste accepts dominant order.",
+            "When included by higher castes, they accept low position and roles.",
+            "When excluded, they replicate excluded institutions in own community.",
+            "In Endavur, UT caste divided into caste groups replicating main caste order."
+          ]
+        },
+        "Untouchability - Examples & Observations": {
+          "description": "Examples of caste distance among untouchables and emergence of new castes.",
+          "keyPoints": [
+            "G.W. Briggs — Satnami Chamar refuses to eat with sweeper Chamar; both keep distance from bhangis.",
+            "AM Shah — Gavas or Gauda caste in Gujarat claim to be Brahmins; provide priestly services to UT; new castes emerge to fill service gaps."
+          ]
+        },
+        "Louis Dumont on Untouchability": {
+          "description": "Two types of untouchability based on pollution.",
+          "keyPoints": [
+            "Temporary — impure for prescribed period.",
+            "Permanent — by birth due to substance involved."
+          ]
+        },
+        "Dipankar Gupta's View on Untouchability": {
+          "description": "Disagrees with Moffatt, sees acceptance of UT as repressed hostility.",
+          "keyPoints": [
+            "With end of dependency, hostility becomes open conflict.",
+            "No clear-cut hierarchy, but clear identities of competing groups."
+          ]
+        }
       }
     }
-   }
   }
 };
 
