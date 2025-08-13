@@ -1,7 +1,7 @@
 window.EMBEDDED_STUDY_DATA = {
     "studyTopics": {
         "Class 1": {
-            "class": "1",
+            "class": "11",
             "title": "Positivism & Classical Evolution",
             "subtopics": {
                 "Positivism": {
