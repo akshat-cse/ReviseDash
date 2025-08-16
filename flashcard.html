@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gray-900 text-gray-100 flex items-center justify-center p-4">
+  <div class="w-full max-w-md bg-gray-800 rounded-2xl shadow-lg p-5 space-y-5">
+    <header class="flex flex-col gap-3">
+      <h1 class="text-2xl font-semibold">Flashcards</h1>
+      <div id="subjects" class="flex gap-2 overflow-auto pb-1"></div>
+      <div class="w-full space-y-1">
+        <div class="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
+          <div id="progress" class="h-full bg-white w-0"></div>
+        </div>
+        <div class="flex justify-between text-xs text-gray-300">
+          <span id="through">0% through</span>
+          <span id="mastery">Mastery: 0%</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="space-y-4">
+      <div id="card" class="cursor-pointer select-none rounded-2xl border border-gray-600 p-6 text-center shadow-sm">
+        <div class="text-xs text-gray-400 mb-2">Tap to flip</div>
+        <div id="cardText" class="text-2xl font-medium leading-snug"></div>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <button id="prev" class="py-3 rounded-xl border border-gray-600 shadow-sm bg-gray-700">Prev</button>
+        <button id="next" class="py-3 rounded-xl border border-gray-600 shadow-sm bg-gray-700">Next</button>
+        <button id="known" class="col-span-2 py-3 rounded-xl bg-white text-black shadow">I knew this</button>
+      </div>
+      <div class="flex items-center justify-between text-sm text-gray-400">
+        <span id="status">Card 0/0 · Known 0/0</span>
+        <button id="reset" class="underline underline-offset-2">Reset</button>
+      </div>
+    </main>
+
+    <footer class="text-xs text-gray-500 text-center">
+      Space / Tap card to flip
+    </footer>
+  </div>
+
+  <script>
+    const SUBJECTS = {
+      Math: [
+        { q: "2 + 3", a: "5" },
+        { q: "Derivative of x^2", a: "2x" },
+        { q: "Prime after 13", a: "17" },
+      ],
+      History: [
+        { q: "Year of Indian Independence?", a: "1947" },
+        { q: "Capital of Mauryan Empire?", a: "Pataliputra" },
+        { q: "Mughal emperor called Akbar's son?", a: "Jahangir" },
+      ],
+      Science: [
+        { q: "H2O is commonly called?", a: "Water" },
+        { q: "Nearest star to Earth?", a: "Sun" },
+        { q: "Planet called Red Planet?", a: "Mars" },
+      ]
+    };
+
+    let subject = localStorage.getItem("fc_subject") || Object.keys(SUBJECTS)[0];
+    let i = +localStorage.getItem("fc_index_" + subject) || 0;
+    let mastery = JSON.parse(localStorage.getItem("fc_mastery_" + subject) || "null") || SUBJECTS[subject].map(() => false);
+    let show = false;
+
+    const subjectsDiv = document.getElementById("subjects");
+    const progressBar = document.getElementById("progress");
+    const through = document.getElementById("through");
+    const masteryText = document.getElementById("mastery");
+    const cardText = document.getElementById("cardText");
+    const status = document.getElementById("status");
+
+    function renderSubjects() {
+      subjectsDiv.innerHTML = "";
+      for (const s of Object.keys(SUBJECTS)) {
+        const btn = document.createElement("button");
+        btn.textContent = s;
+        btn.className = `px-3 py-1 rounded-2xl text-sm border shadow-sm ${s === subject ? 'bg-white text-black border-white' : 'bg-gray-700 text-gray-200 border-gray-600'}`;
+        btn.onclick = () => { subject = s; i = 0; mastery = SUBJECTS[subject].map(() => false); render(); };
+        subjectsDiv.appendChild(btn);
+      }
+    }
+
+    function render() {
+      const deck = SUBJECTS[subject];
+      if (i >= deck.length) i = 0;
+      const total = deck.length;
+      const masteredCount = mastery.filter(Boolean).length;
+
+      progressBar.style.width = total ? ((i + 1) / total * 100) + "%" : "0%";
+      through.textContent = (total ? Math.round(((i + 1) / total) * 100) : 0) + "% through";
+      masteryText.textContent = `Mastery: ${total ? Math.round((masteredCount / total) * 100) : 0}%`;
+
+      cardText.textContent = show ? deck[i].a : deck[i].q;
+      status.textContent = `Card ${total ? i + 1 : 0}/${total} · Known ${masteredCount}/${total}`;
+
+      localStorage.setItem("fc_subject", subject);
+      localStorage.setItem("fc_index_" + subject, i);
+      localStorage.setItem("fc_mastery_" + subject, JSON.stringify(mastery));
+    }
+
+    // Flip on spacebar press
+    // Space flips, Left/Right navigate
+    document.addEventListener("keydown", (e) => {
+      // Flip on Space
+      if (e.code === "Space") {
+        e.preventDefault(); // prevent page scroll
+        show = !show;
+        render();
+        return;
+      }
+
+      // Right arrow -> Next card
+      if (e.code === "ArrowRight") {
+        e.preventDefault();
+        i = (i + 1) % SUBJECTS[subject].length;
+        show = false;
+        render();
+        return;
+      }
+
+      // Left arrow -> Previous card
+      if (e.code === "ArrowLeft") {
+        e.preventDefault();
+        i = (i - 1 + SUBJECTS[subject].length) % SUBJECTS[subject].length;
+        show = false;
+        render();
+        return;
+      }
+    });
+
+    document.getElementById("card").onclick = () => { show = !show; render(); };
+    document.getElementById("next").onclick = () => { i = (i + 1) % SUBJECTS[subject].length; show = false; render(); };
+    document.getElementById("prev").onclick = () => { i = (i - 1 + SUBJECTS[subject].length) % SUBJECTS[subject].length; show = false; render(); };
+    document.getElementById("known").onclick = () => { mastery[i] = true; i = (i + 1) % SUBJECTS[subject].length; show = false; render(); };
+    document.getElementById("reset").onclick = () => { mastery = SUBJECTS[subject].map(() => false); i = 0; show = false; render(); };
+
+    renderSubjects();
+    render();
+  </script>
+</body>
+
+</html>
