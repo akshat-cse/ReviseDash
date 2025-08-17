@@ -729,11 +729,16 @@
         btn.className = `px-3 py-1 rounded-2xl text-sm border shadow-sm ${s === subject ? 'bg-white text-black border-white' : 'bg-gray-700 text-gray-200 border-gray-600'}`;
         btn.onclick = () => {
           subject = s;
-          i = 0;
-          mastery = SUBJECTS[subject].map(() => false);
-          renderSubjects(); // 🔥 re-render subject buttons to update highlight
-          render();         // re-render flashcard UI
+          // 🔥 load saved index if available, else 0
+          i = +localStorage.getItem("fc_index_" + subject) || 0;
+          // 🔥 load mastery for this subject if available, else fresh array
+          mastery = JSON.parse(localStorage.getItem("fc_mastery_" + subject) || "null")
+            || SUBJECTS[subject].map(() => false);
+
+          renderSubjects();
+          render();
         };
+
         subjectsDiv.appendChild(btn);
       }
     }
